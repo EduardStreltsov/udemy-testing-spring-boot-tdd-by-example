@@ -8,11 +8,11 @@ public class Money implements Expression {
 	protected String currency;
 	
 	public Money(int amount, String currency) {
-   		this.amount = amount;
+		this.amount = amount;
 		this.currency = currency;
 	}
 	
-	protected String currency(){
+	protected String currency() {
 		return this.currency;
 	}
 	
@@ -33,8 +33,8 @@ public class Money implements Expression {
 	}
 	
 	@Override
-	public Money reduce(String toCurrency) {
-		return this;
+	public Money reduce(Bank bank, String toCurrency) {
+		return new Money(amount / bank.rate(this.currency, toCurrency), toCurrency);
 	}
 	
 	@Override
