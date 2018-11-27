@@ -83,7 +83,7 @@ class MoneyTest {
 	
 	@Test
 	public void testMixedAddition() {
-		Money fiveUsd = Money.dollar(5);
+		Expression fiveUsd = Money.dollar(5);
 		Expression tenChf = Money.franc(10);
 		Bank bank = new Bank();
 		bank.addRate("CHF", "USD", 2);
